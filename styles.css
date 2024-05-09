@@ -99,6 +99,8 @@
   }
   .calculator .equal {
     background: #2196f3;
+    grid-column: span 3;
+    width: 270px;
   }
   .calculator .equal::before{
     background: linear-gradient(90deg, #1479c9, #ffffff5c);
