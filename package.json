@@ -1,0 +1,19 @@
+{
+  "name": "top-calculator",
+  "version": "1.0.0",
+  "description": "TOP introducton course final project",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-Emad-777/TOP-calculator.git"
+  },
+  "author": "Emad Alriyashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dev-Emad-777/TOP-calculator/issues"
+  },
+  "homepage": "https://github.com/Dev-Emad-777/TOP-calculator#readme"
+}
