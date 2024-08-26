@@ -1,84 +1,46 @@
-// todo: add function
-function add(...nums) {
-  return nums.reduce((total, current) => total + current);
+const display = document.getElementById("display");
+const calc = document.getElementById("calc");
+
+function add(num1, num2) {
+  return parseInt(num1) + parseInt(num2);
+}
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+function divide(num1, num2) {
+  return num1 / num2;
+}
+function multiply(num1, num2) {
+  return num1 * num2;
 }
 
-// todo: subtract function
-function subtract(...nums) {
-  return nums.reduce((total, current) => total - current);
-}
+calc.addEventListener("click", () => {
+  let text = display.value;
 
-// todo: multiply function
-function multiply(...nums) {
-  return nums.reduce((total, current) => total * current);
-}
+  let num1 = "";
+  let operator = "";
+  let num2 = "";
 
-// todo: divide function
-function divide(...nums) {
-  return nums.reduce((total, current) => total / current);
-}
+  for (n in text) {
+    if (text[n] == "+" || text[n] == "-" || text[n] == "*" || text[n] == "/") operator = text[n];
+    else if (!operator) num1 += text[n];
+    else if (operator) num2 += text[n];
+  }
 
-document.addEventListener("keydown", function (event) {
-  let txt = document.querySelector(".value");
-  switch (event.key) {
-    case "c":
-      txt.value = "";
-      break;
-    case "/":
-      txt.value += "/";
-      break;
-    case "*":
-      txt.value += "*";
-      break;
-    case "7":
-      txt.value += "7";
-      break;
-    case "8":
-      txt.value += "8";
-      break;
-    case "9":
-      txt.value += "9";
+  switch (operator) {
+    case "+":
+      display.value = add(num1, num2);
       break;
     case "-":
-      txt.value += "-";
+      display.value = subtract(num1, num2);
       break;
-    case "4":
-      txt.value += "4";
+    case "*":
+      display.value = multiply(num1, num2);
       break;
-    case "5":
-      txt.value += "5";
-      break;
-    case "6":
-      txt.value += "6";
-      break;
-    case "+":
-      txt.value += "+";
-      break;
-    case "1":
-      txt.value += "1";
-      break;
-    case "2":
-      txt.value += "2";
-      break;
-    case "3":
-      txt.value += "3";
-      break;
-    case "0":
-      txt.value += "0";
+    case "/":
+      display.value = divide(num1, num2);
       break;
     default:
       break;
   }
 });
-
-document.addEventListener('keydown', function(event) {
-    let txt = document.querySelector('.value');
-    if (event.key === 'Enter') {
-        try {
-            txt.value = eval(txt.value);
-        } catch (error) {
-            console.error('Error in expression: ', error);
-        }
-    }
-});
-
